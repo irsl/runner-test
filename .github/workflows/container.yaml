@@ -1,0 +1,14 @@
+name: Actions Runner Controller Demo - container
+on:
+  workflow_dispatch:
+
+jobs:
+  Explore-GitHub-Actions:
+    # You need to use the INSTALLATION_NAME from the previous step
+    runs-on: arc-runners-linux
+    container:
+      image: node:18
+      env:
+        NODE_ENV: development
+    steps:
+    - run: echo "🎉 This job uses runner scale set runners!"; sleep 900
