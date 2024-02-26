@@ -12,6 +12,9 @@ RUN Add-Type -AssemblyName System.IO.Compression.FileSystem ; [System.IO.Compres
 
 RUN Invoke-WebRequest -Uri 'https://aka.ms/install-powershell.ps1' -OutFile install-powershell.ps1; ./install-powershell.ps1 -AddToPath
 
+# https://stackoverflow.com/questions/76470752/chocolatey-installation-in-docker-started-to-fail-restart-due-to-net-framework
+ENV chocolateyVersion=1.4.0
+
 RUN powershell Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 
 RUN powershell choco install git.install --params "'/GitAndUnixToolsOnPath'" -y
