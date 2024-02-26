@@ -7,7 +7,7 @@ on:
 jobs:
   Explore-GitHub-Actions:
     # You need to use the INSTALLATION_NAME from the previous step
-    runs-on: windows-latest
+    runs-on: windows-2019
     permissions:
       contents: read
       packages: write
