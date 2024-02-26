@@ -8,6 +8,9 @@ jobs:
   Explore-GitHub-Actions:
     # You need to use the INSTALLATION_NAME from the previous step
     runs-on: windows-latest
+    permissions:
+      contents: read
+      packages: write
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
@@ -15,3 +18,6 @@ jobs:
     - run: |
         docker build -t win .
         docker images
+        echo ${{ secrets.GITHUB_TOKEN }} | docker login ghcr.io -u irsl --password-stdin
+        docker tag win ghcr.io/irsl/runner-test/win:latest
+        docker push ghcr.io/irsl/runner-test/win:latest
