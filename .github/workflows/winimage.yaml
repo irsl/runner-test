@@ -19,5 +19,5 @@ jobs:
         docker build -t win .
         docker images
         echo ${{ secrets.GITHUB_TOKEN }} | docker login ghcr.io -u irsl --password-stdin
-        docker tag win ghcr.io/irsl/runner-test/win:latest
-        docker push ghcr.io/irsl/runner-test/win:latest
+        docker tag win ghcr.io/irsl/runner-test:windows
+        docker push ghcr.io/irsl/runner-test:windows
