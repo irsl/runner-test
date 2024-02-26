@@ -1,4 +1,4 @@
-name: Actions Runner Controller Demo
+name: Actions Runner Controller - windows runner
 on:
   workflow_dispatch:
 
