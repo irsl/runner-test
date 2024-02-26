@@ -7,7 +7,7 @@ on:
 jobs:
   Explore-GitHub-Actions:
     # You need to use the INSTALLATION_NAME from the previous step
-    runs-on: arc-runners-linux
+    runs-on: windows-latest
     steps:
     - run: |
         docker build -t win .
