@@ -1,0 +1,13 @@
+name: Actions Runner Controller Demo
+on:
+  workflow_dispatch:
+
+jobs:
+  Explore-GitHub-Actions:
+    # You need to use the INSTALLATION_NAME from the previous step
+    runs-on: arc-runners-windows
+    steps:
+    - run: |
+        echo hello
+        whoami
+        sleep 900
