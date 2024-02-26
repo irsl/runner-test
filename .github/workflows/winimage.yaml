@@ -9,6 +9,9 @@ jobs:
     # You need to use the INSTALLATION_NAME from the previous step
     runs-on: windows-latest
     steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
     - run: |
         docker build -t win .
         docker images
